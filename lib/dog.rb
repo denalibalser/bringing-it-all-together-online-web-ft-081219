@@ -74,6 +74,11 @@ class Dog
     sql = "SELECT * FROM dogs WHERE name = ?"
     result = DB[:conn].execute(sql, name)[0]
     Dog.new(id: result[0], name: result[1], breed: result[2])
+  end
+
+  def update
+    sql = "UPDATE songs SET name = ?, album = ? WHERE id = ?"
+    DB[:conn].execute(sql)
   end 
 
 
